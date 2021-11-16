@@ -1,18 +1,32 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1>Créer un nouveau trajet</h1>
-      <%= simple_form_for(travel) do |f| %>
-        <%= f.input :departure_location %>
-        <%= f.input :departure_date %>
-        <%= f.input :departure_hour %>
-        <%= f.input :arrival_location %>
-        <%= f.input :arrival_date %>
-        <%= f.input :arrival_hour %>
-        <%= f.input :number_passenger %>
-        <%= f.button :submit, class: 'btn-primary mt-3' %>
-      <% end %>
-      <%= link_to "Back to travel", travels_path %>
-   </div>
+<div><%= render 'shared/navbar' %></div>
+  <div class="container">
+    <div class="row mt-5">
+      <div class="col-xs-12 col-sm-10 col-md-6 offset-sm-2 offset-md-4">
+        <h1>Créer un nouveau trajet</h1>
+        <%= simple_form_for(travel) do |f| %>
+
+        <%-# ----------- Location form ----------- -%>
+        <div>
+          <div class="col-12">
+            <%= f.input :departure_location %>
+          </div>
+          <div class="col-12">
+            <%= f.input :arrival_location %>
+          </div>
+        </div>
+        <%-# ----------- Date form ----------- -%>
+        <div class="col-12">
+          <%= f.input :departure_date %>
+          <%= f.input :departure_hour %>
+        </div>
+        <%-# ----------- Passenger form ----------- -%>
+        <div class="col-12">
+          <%= f.input :number_passenger %>
+        </div>
+          <%= f.button :submit, class: 'btn-primary mt-3' %>
+        <% end %>
+        <%= link_to "Back to travel", travels_path %>
+      </div>
+    </div>
   </div>
 </div>
