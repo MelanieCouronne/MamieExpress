@@ -1,0 +1,2 @@
+class GranniesController < ApplicationController
+end
