@@ -1,0 +1,50 @@
+<div class="container">
+
+  <h2>Mes voyages</h2>
+
+  <div class="cards">
+    <% @travels.each do |travel| %>
+      <div class="card">
+        <h3 class="card-departure-date"><%= travel.departure_date %></h3>
+        <div class="card-departure">
+          <p><%= travel.departure_hour %> <%= travel.departure_location %></p>
+        </div>
+        <p class="time-travel"><%= travel.arrival_hour - travel.departure_hour %></p>
+        <div class="card-arrival">
+          <%= travel.arrival_hour %> <%= travel.arrival_location %>
+        </div>
+        <p class="card-passenger-number">Nombre de passagers : <%= travel.number_passenger %></p>
+
+        <div class="card-links">
+          <%= link_to '#' do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
+          <%= link_to '#' do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <% #<div class="cards">
+    # <div class="card">
+  #     <h3 class="card-departure-date">18 Nov</h3>
+  #     <div class="card-departure">
+  #       <p class="card-departure-hour">18:00</p>
+  #       <p class="card-departure-location">Bordeaux</p>
+  #     </div>
+  #     <p class="time-travel">6h10</p>
+  #     <div class="card-arrival">
+  #       <p class="card-departure-hour">00:10</p>
+  #     </div>
+  #     <p class="card-passenger-number">Nombre de passagers : 2</p>
+
+  #     <div class="card-links">
+  #         <i class="far fa-edit"></i>
+  #         <i class="fas fa-trash"></i>
+  #     </div>
+  #   </div>
+  # </div> %>
+
+</div>
