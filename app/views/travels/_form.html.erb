@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1>Créer un nouveau trajet</h1>
+      <%= simple_form_for(travel) do |f| %>
+        <%= f.input :departure_location %>
+        <%= f.input :departure_date %>
+        <%= f.input :departure_hour %>
+        <%= f.input :arrival_location %>
+        <%= f.input :arrival_date %>
+        <%= f.input :arrival_hour %>
+        <%= f.input :number_passenger %>
+        <%= f.button :submit, class: 'btn-primary mt-3' %>
+      <% end %>
+      <%= link_to "Back to travel", travels_path %>
+   </div>
+  </div>
+</div>
