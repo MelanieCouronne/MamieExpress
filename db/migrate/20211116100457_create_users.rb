@@ -11,7 +11,7 @@ class CreateUsers < ActiveRecord::Migration[6.0]
       t.string :username
       t.string :password
       t.string :type_of_car
-      t.bolean :driver
+      t.boolean :driver
 
       t.timestamps
     end
