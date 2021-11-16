@@ -17,6 +17,10 @@ class TravelsController < ApplicationController
     end
   end
 
+  def index
+    @travels = policy_scope(Travel)
+  end
+
   def show
   end
 
