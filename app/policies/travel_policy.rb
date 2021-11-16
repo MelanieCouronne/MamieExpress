@@ -4,4 +4,20 @@ class TravelPolicy < ApplicationPolicy
       scope.all
     end
   end
+
+  def show?
+    true  # Anyone can view a travel
+  end
+
+  def create?
+    true  # Anyone can create a travel
+  end
+
+  def update?
+    record.user == user  # Only travel creator can update it
+  end
+
+  def destroy?
+    record.user == user  # Only travel creator can update it
+  end
 end

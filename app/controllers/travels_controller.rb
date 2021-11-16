@@ -1,7 +1,7 @@
 class TravelsController < ApplicationController
-  authorize @travel
 
   def new
-    @travel = Travel.new
+    @travel = current_user.travels.new
+    authorize @travel
   end
 end
