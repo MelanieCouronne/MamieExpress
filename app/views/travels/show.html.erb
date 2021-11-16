@@ -1,0 +1,89 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <%= image_tag "Logo_large.png" %>
+  <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <%= link_to "Rechercher", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Ajouter un trajet", "#", class: "nav-link" %>
+      </li>
+      <li class="nav-item dropdown">
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Mon profil", "#", class: "dropdown-item" %>
+          <%= link_to "Se déconnecter", "#", class: "dropdown-item" %>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="card map">
+    <h2>Résumé du trajet</h2>
+      <div>
+        <h3>Mon trajet</h3>
+        <i class="far fa-file-edit"></i>
+        <i class="far fa-trash-alt"></i>
+      </div>
+      <div>
+        <h4>From: Bordeaux</h4>
+        <h4>To: Paris</h4>
+      </div>
+      <div>
+        <h4>Date: 18.05.2021</h4>
+      </div>
+      <div>
+      <h4>Places restantes : 0</h4>
+      </div>
+      <div class="map">
+      </div>
+  </div>
+
+  <div class="card w-75">
+    <div class="card-body">
+      <h5 class="card-title">En cours</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-danger">Mamie livrée</a>
+    </div>
+  </div>
+
+  <div class="card w-75">
+    <div class="card-body">
+      <h5 class="card-title">Vous avez 5 nouveaux messages</h5>
+      <p class="card-text">De Julie</p>
+      <p class="card-text">Date: Julie</p>
+    </div>
+  </div>
+
+  <div class="card w-75">
+    <div class="card-body">
+      <h5 class="card-title">A venir</h5>
+      <p class="card-text"></p>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
+  </div>
+</div>
