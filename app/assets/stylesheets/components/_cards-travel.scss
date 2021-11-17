@@ -1,0 +1,88 @@
+.container {
+  margin: 0 auto;
+  h1 {
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.cards {
+  padding: 20px;
+  width: 960px;
+  background-color: white;
+  margin: 0 auto;
+
+  .card {
+  padding: 30px 30px 10px 30px;
+  border: 1px solid rgb(200, 200, 200);
+  box-shadow: 3px 3px 7px rgb(210, 210, 210);
+  border-radius: 20px;
+  margin-bottom: 16px;
+
+
+  .card-departure-date {
+    border-bottom: solid 1px rgb(180, 180, 180);
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  .card-departure {
+    display: flex;
+    align-items: baseline;
+    position: relative;
+    margin-bottom: 12px;
+    margin-left: 30px;
+  }
+
+  .card-part-up {
+    display: flex;
+    justify-content: space-between;
+  }
+
+    .trait-trajet{
+      width: 60px;
+      position: absolute;
+      left: 65px;
+      top: -2px;
+    }
+
+    .text-departure-location {
+      margin-left: 45px;
+    }
+
+    .text-arrival-location {
+      margin-left: 150px;
+    }
+
+    p {
+      font-size: 20px;
+    }
+
+
+    .card-passenger-number {
+      display: flex;
+      margin-top: 10px;
+      margin-left: 30px;
+    }
+
+    .seat-belt {
+      height: 30px;
+      margin-left: 7px;
+    }
+
+    .card-links {
+      color: rgb(100, 100, 100);
+      font-size: 25px;
+      margin-left: 10px;
+    }
+
+    .fa-edit {
+      color: rgb(100, 100, 100);
+      font-size: 25px;
+      margin-right: 5px;
+    }
+  }
+}
