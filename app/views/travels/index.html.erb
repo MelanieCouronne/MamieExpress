@@ -1,59 +1,72 @@
-<div class="container">
+<div class="background">
+  <div class="container">
 
-  <h1>Mes trajets</h1>
+    <h1>Mes trajets</h1>
 
-  <div class="cards">
-    <% @travels.each do |travel| %>
-      <div class="card">
-        <h2 class="card-departure-date">
-          <% if travel.departure_date.strftime("%A") == "Monday" %>
-          <%= "Lundi" %>
-          <% elsif travel.departure_date.strftime("%A") == "Tuesday" %>
-            <%= "Mardi" %>
-          <% elsif travel.departure_date.strftime("%A") == "Wednesday" %>
-            <%= "Mercredi" %>
-          <% elsif travel.departure_date.strftime("%A") == "Thursday" %>
-            <%= "Jeudi" %>
-          <% elsif travel.departure_date.strftime("%A") == "Friday" %>
-            <%= "Vendredi" %>
-          <% elsif travel.departure_date.strftime("%A") == "Saturday" %>
-            <%= "Samedi" %>
-          <% elsif travel.departure_date.strftime("%A") == "Sunday" %>
-            <%= "Dimanche" %>
-        <% end %>
-        <%= travel.departure_date.to_formatted_s(:rfc822) %></h2>
+    <div class="cards">
+      <% @travels.each do |travel| %>
+       <% if policy(travel).show? %>
+        <div class="card">
+          <h2 class="card-departure-date">
+            <% if travel.departure_date.strftime("%A") == "Monday" %>
+            <%= "Lundi" %>
+            <% elsif travel.departure_date.strftime("%A") == "Tuesday" %>
+              <%= "Mardi" %>
+            <% elsif travel.departure_date.strftime("%A") == "Wednesday" %>
+              <%= "Mercredi" %>
+            <% elsif travel.departure_date.strftime("%A") == "Thursday" %>
+              <%= "Jeudi" %>
+            <% elsif travel.departure_date.strftime("%A") == "Friday" %>
+              <%= "Vendredi" %>
+            <% elsif travel.departure_date.strftime("%A") == "Saturday" %>
+              <%= "Samedi" %>
+            <% elsif travel.departure_date.strftime("%A") == "Sunday" %>
+              <%= "Dimanche" %>
+          <% end %>
+          <%= travel.departure_date.to_formatted_s(:rfc822) %></h2>
 
-        <div class="card-part-up">
-          <div class="card-departure">
-            <h3><%= travel.departure_hour.to_s(:time) %></h3><%= image_tag 'trait_trajet.png', class:'trait-trajet' %><h4 class='text-departure-location'><%= travel.departure_location.capitalize %></h4>
-          </div>
-            <div class="card-links">
-              <%= link_to '#' do %>
-                <i class="far fa-edit"></i>
-              <% end %>
-              <%= link_to '#' do %>
-                <i class="fas fa-trash"></i>
-              <% end %>
+          <div class="card-part-up">
+            <div class="card-departure">
+              <h3><%= travel.departure_hour.to_s(:time) %></h3><%= image_tag 'trait_trajet.png', class:'trait-trajet' %><h4 class='text-departure-location'><%= travel.departure_location.capitalize %></h4>
             </div>
-        </div>
-        <%# <p class="time-travel"><%= travel.arrival_hour - travel.departure_hour</p> %>
-        <div class="card-arrival">
-          <%# <h3><%= travel.arrival_hour.to_s(:time) %>
-           <h4 class='text-arrival-location'><%= travel.arrival_location.capitalize %></h4>
-        </div>
+              <div class="card-links">
 
-        <div class="card-passenger-number">
-          <p>Nombre de passagers : <%= travel.number_passenger %></p>
-            <%# <% if travel.number_passenger == 1 %>
-              <%# <%= image_tag 'seat-belt', class:'seat-belt'%>
-            <%# <% elsif travel.number_passenger == 2 %>
-              <%# <%= image_tag 'seat-belt', class:'seat-belt'%><%# <%= image_tag 'seat-belt', class:'seat-belt' %>
-            <%# <% end %>
+                <% if policy(travel).update? %>
+                  <%= link_to edit_travel_path(travel) do %>
+                    <i class="far fa-edit"></i>
+                  <% end %>
+                <% end %>
+
+                <% if policy(travel).destroy? %>
+                  <%= link_to travel_path(travel),
+                    method: :delete,
+                    data: { confirm: "Es-tu vraiment sûr de supprimer ce voyage ?" } do %>
+                    <i class="fas fa-trash"></i>
+                  <% end %>
+                <% end %>
+              </div>
+
+          </div>
+          <%# <p class="time-travel"><%= travel.arrival_hour - travel.departure_hour</p> %>
+          <div class="card-arrival">
+            <%# <h3><%= travel.arrival_hour.to_s(:time) %>
+            <h4 class='text-arrival-location'><%= travel.arrival_location.capitalize %></h4>
+          </div>
+
+          <div class="card-passenger-number">
+            <p>Nombre de passagers : <%= travel.number_passenger %></p>
+              <%# <% if travel.number_passenger == 1 %>
+                <%# <%= image_tag 'seat-belt', class:'seat-belt'%>
+              <%# <% elsif travel.number_passenger == 2 %>
+                <%# <%= image_tag 'seat-belt', class:'seat-belt'%><%# <%= image_tag 'seat-belt', class:'seat-belt' %>
+              <%# <% end %>
+          </div>
+
+
         </div>
+       <% end %>
+      <% end %>
+    </div>
 
-
-      </div>
-    <% end %>
   </div>
-
 </div>
