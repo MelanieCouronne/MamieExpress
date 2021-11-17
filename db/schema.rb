@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_11_17_095244) do
 
   # These are extensions that must be enabled in order to support this database
@@ -28,11 +29,11 @@ ActiveRecord::Schema.define(version: 2021_11_17_095244) do
   end
 
   create_table "travels", force: :cascade do |t|
-    t.string "departure_date"
-    t.string "departure_hour"
-    t.string "arrival_date"
-    t.string "arrival_hour"
-    t.string "number_passenger"
+    t.date "departure_date"
+    t.datetime "departure_hour"
+    t.date "arrival_date"
+    t.datetime "arrival_hour"
+    t.integer "number_passenger"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
