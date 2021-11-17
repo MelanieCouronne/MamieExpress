@@ -1,33 +1,37 @@
 .container {
   margin: 0 auto;
+
   h1 {
     font-size: 40px;
     display: flex;
     justify-content: center;
-    // margin-bottom: 15px;
-    padding-bottom: 15px;
+    padding-top: 30px;
+    padding-bottom: 0px;
   }
 }
 
 .cards {
   padding: 20px;
-  width: 960px;
-  background-color: white;
+  width: 900px;
   margin: 0 auto;
 
   .card {
+  // background-color: white;
   padding: 30px 30px 10px 30px;
   border: 1px solid rgb(200, 200, 200);
   box-shadow: 3px 3px 7px rgb(210, 210, 210);
   border-radius: 20px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 
+  h3 {
+    font-size: 18px;
+  }
 
   .card-departure-date {
     border-bottom: solid 1px rgb(180, 180, 180);
     padding-bottom: 12px;
     margin-bottom: 16px;
-    font-size: 30px;
+    font-size: 18px;
     font-weight: bold;
   }
 
@@ -35,7 +39,7 @@
     display: flex;
     align-items: baseline;
     position: relative;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
     margin-left: 30px;
   }
 
@@ -47,20 +51,22 @@
     .trait-trajet{
       width: 60px;
       position: absolute;
-      left: 65px;
-      top: -2px;
+      left: 41px;
+      top: -6px;
     }
 
     .text-departure-location {
+      font-size: 18px;
       margin-left: 45px;
     }
 
     .text-arrival-location {
-      margin-left: 150px;
+      font-size: 18px;
+      margin-left: 133px;
     }
 
     p {
-      font-size: 20px;
+      font-size: 16px;
     }
 
 
@@ -68,6 +74,7 @@
       display: flex;
       margin-top: 10px;
       margin-left: 30px;
+      font-size: 12px;
     }
 
     .seat-belt {
@@ -77,13 +84,13 @@
 
     .card-links {
       color: rgb(100, 100, 100);
-      font-size: 25px;
+      font-size: 16px;
       margin-left: 10px;
     }
 
     .fa-edit {
       color: rgb(100, 100, 100);
-      font-size: 25px;
+      font-size: 16px;
       margin-right: 5px;
     }
   }
