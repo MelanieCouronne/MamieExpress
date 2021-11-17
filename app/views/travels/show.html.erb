@@ -1,67 +1,53 @@
 
 
-<div class="container">
-
-  <div class="card-map">
-    <h2>Résumé du trajet</h2>
+<div class="main-container">
+  <div class="card-trip">
+    <div class="card-trip-infos">
+      <div>
+        <h2>Résumé du trajet</h2>
+        <i class="far fa-trash-alt"></i>
+        <div>
+          <h4>From: Bordeaux</h4>
+          <h4>To: Paris</h4>
+        </div>
+        <div>
+          <h4>Date: 18.05.2021</h4>
+        </div>
+        <div>
+        <h4>Places restantes : 0</h4>
+        </div>
+      </div>
+    </div>
     <div id="map"
-      style="width: 100%; height: 600px;"
+      style="width: 100%; height: 300px;"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-     </div>
-      <div>
-        <h3>Mon trajet</h3>
-        <i class="far fa-file-edit"></i>
-        <i class="far fa-trash-alt"></i>
-      </div>
-      <div>
-        <h4>From: Bordeaux</h4>
-        <h4>To: Paris</h4>
-      </div>
-      <div>
-        <h4>Date: 18.05.2021</h4>
-      </div>
-      <div>
-      <h4>Places restantes : 0</h4>
-      </div>
-      <div class="map">
-      </div>
-  </div>
-
-  <div class="card w-75">
-    <div class="card-body">
-      <h5 class="card-title">En cours</h5>
-      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-      <a href="#" class="btn btn-danger">Mamie livrée</a>
     </div>
   </div>
 
-  <div class="card w-75">
-    <div class="card-body">
-      <h5 class="card-title">Vous avez 5 nouveaux messages</h5>
-      <p class="card-text">De Julie</p>
-      <p class="card-text">Date: Julie</p>
+  <div class=cards_chat >
+    <div class="card w-75">
+      <div class="card-body">
+        <h5 class="card-title">En cours</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-danger">Mamie livrée</a>
+      </div>
+    </div>
+
+    <div class="card w-75">
+      <div class="card-body">
+        <h5 class="card-title">Vous avez 5 nouveaux messages</h5>
+        <p class="card-text">De Julie</p>
+        <p class="card-text">Date: Julie</p>
+      </div>
+    </div>
+
+    <div class="card w-75">
+      <div class="card-body">
+        <h5 class="card-title">A venir</h5>
+        <p class="card-text"></p>
+      </div>
     </div>
   </div>
 
-  <div class="card w-75">
-    <div class="card-body">
-      <h5 class="card-title">A venir</h5>
-      <p class="card-text"></p>
-    </div>
-  </div>
-
-</div>
-
-<div class="footer">
-  <div class="footer-links">
-    <a href="#"><i class="fab fa-github"></i></a>
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-facebook"></i></a>
-    <a href="#"><i class="fab fa-twitter"></i></a>
-    <a href="#"><i class="fab fa-linkedin"></i></a>
-  </div>
-  <div class="footer-copyright">
-    This footer is made with <i class="fas fa-heart"></i> at Le Wagon
-  </div>
 </div>
