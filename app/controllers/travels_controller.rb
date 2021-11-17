@@ -1,6 +1,6 @@
 class TravelsController < ApplicationController
   before_action :set_travel, only: :show
-  
+
   def new
     @travel = current_user.travels.new
     authorize @travel
@@ -22,6 +22,15 @@ class TravelsController < ApplicationController
   end
 
   def show
+    @travels = Travel.geocoded
+    @markers = @travels.geocoded.map do |travel|
+      {
+        lat: travel.latitude,
+        lng: travel.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { travel: travel }),
+        # image_url: helpers.asset_url('mamie_head.jpg')
+      }
+    end
   end
 
   private
