@@ -7,7 +7,7 @@ class Travel < ApplicationRecord
   after_validation :geocode, if: :will_save_change_to_arrival_location?
 
   validates :departure_location, presence: true
-  validates :departure_date, presence: true
+  # validates :departure_date, presence: true
   # validates :departure_hour, presence: true
   validates :arrival_location, presence: true
   validates :number_passenger, presence: true
