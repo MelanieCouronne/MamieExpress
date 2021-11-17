@@ -1,5 +1,5 @@
 class TravelsController < ApplicationController
-  before_action :set_travel, only: :show
+  before_action :set_travel, only: [:show, :edit]
 
   def new
     @travel = current_user.travels.new
@@ -15,6 +15,9 @@ class TravelsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
   end
 
   def index
