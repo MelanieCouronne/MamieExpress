@@ -1,3 +1,12 @@
-.card-map {
-  width: 80%;
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card_map{
+  margin-left: 10px;
+}
+
+.cards_chat{
 }
