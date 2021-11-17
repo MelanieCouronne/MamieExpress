@@ -1,3 +1,20 @@
-.img-background {
-  background-image: url("../../images/mamie_head.png");
+// .img-background {
+//   background-image: url("../../images/mamie_head.png");
+// }
+
+.link-to {
+  color: #575756;
+  text-decoration: none;
+  opacity: 0.6;
+}
+
+.link-to:hover {
+  color: #575756;
+  text-decoration: none;
+  opacity: 1;
+}
+
+h1 {
+  color: black;
+  padding: 15px 15px 45px 15px;
 }
