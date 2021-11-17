@@ -1,5 +1,5 @@
 class TravelsController < ApplicationController
-  before_action :set_travel, only: [:show, :edit]
+  before_action :set_travel, only: [:show, :edit, :update, :destroy]
 
   def new
     @travel = current_user.travels.new
@@ -27,6 +27,12 @@ class TravelsController < ApplicationController
   def show
     @results = Geocoder.search(@travel.departure_location).first.coordinates
     @markers = [set_departure_marker, set_arrival_marker]
+  end
+
+  def destroy
+    @travel.destroy
+
+    redirect_to travels_path
   end
 
   private
