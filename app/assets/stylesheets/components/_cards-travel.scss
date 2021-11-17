@@ -1,9 +1,11 @@
 .container {
   margin: 0 auto;
   h1 {
-    font-size: 48px;
+    font-size: 40px;
     display: flex;
     justify-content: center;
+    // margin-bottom: 15px;
+    padding-bottom: 15px;
   }
 }
 
