@@ -1,6 +1,6 @@
 .container {
   margin: 0 auto;
-
+  height: 80vh;
   h1 {
     font-size: 40px;
     display: flex;
@@ -12,7 +12,7 @@
 
 .cards {
   padding: 20px;
-  width: 900px;
+  width: 800px;
   margin: 0 auto;
 
   .card {
