@@ -4,27 +4,29 @@
         <h1>Créer un nouveau trajet</h1>
         <%= simple_form_for(travel) do |f| %>
 
-        <%-# ----------- Location form ----------- -%>
-        <div>
-          <div class="col-12">
-            <%= f.input :departure_location %>
+          <%-# ----------- Location form ----------- -%>
+          <div>
+            <div class="col-12">
+              <%= f.input :departure_location, label: 'Lieu de départ', placeholder: 'Rechercher une adresse' %>
+            </div>
+            <div class="col-12">
+              <%= f.input :arrival_location, label: "Lieu d'arrivée", placeholder: 'Rechercher une adresse' %>
+            </div>
           </div>
+          <%-# ----------- Date form ----------- -%>
           <div class="col-12">
-            <%= f.input :arrival_location %>
+            <%= f.input :departure_date, label: "Date (jj/mm/aaaa)" %>
+            <%= f.input :departure_hour, label: "Heure (hh:mm)" %>
           </div>
-        </div>
-        <%-# ----------- Date form ----------- -%>
-        <div class="col-12">
-          <%= f.input :departure_date %>
-          <%= f.input :departure_hour %>
-        </div>
-        <%-# ----------- Passenger form ----------- -%>
-        <div class="col-12">
-          <%= f.input :number_passenger %>
-        </div>
-          <%= f.button :submit, class: 'btn-primary mt-3' %>
+          <%-# ----------- Passenger form ----------- -%>
+          <div class="col-12">
+            <%= f.input :number_passenger, label: "Passager" %>
+          </div>
+          <div class="col-12 mt-4 d-flex justify-content-between align-items-center">
+          <%= f.button :submit, 'Créer!', class: 'btn btn-danger' %>
         <% end %>
-        <%= link_to "Back to travel", travels_path %>
+          <%= link_to "Retour vers mes trajets", travels_path %>
+          </div>
       </div>
     </div>
   </div>
