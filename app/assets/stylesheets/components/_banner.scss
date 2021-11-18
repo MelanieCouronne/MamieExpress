@@ -1,10 +1,15 @@
 .banner {
-  object-fit: cover;
+  background-image: asset-url('banner_mamieexpress.png');
+  background-size: cover;
+  height: 380px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .container-text-content {
   height: 24vh;
-  align-items: center;
+  align-content: flex-start;
   display: flex;
   justify-content: space-evenly;
 

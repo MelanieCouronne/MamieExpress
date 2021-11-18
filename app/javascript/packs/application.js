@@ -34,10 +34,16 @@ document.addEventListener('turbolinks:load', () => {
 import "bootstrap";
 // Internal imports, e.g:
 import { initAutocomplete } from '../plugins/init_autocomplete.js';
+import { updateEmail } from '../components/change_email_user.js';
+import { updateName } from '../components/change_name_user.js';
+
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initAutocomplete();
+  updateEmail();
+  updateName();
+
 });

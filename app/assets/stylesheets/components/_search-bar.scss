@@ -1,0 +1,60 @@
+.form-search-bar {
+  display: flex;
+  // width: 900px;
+  height: 50px;
+
+  .form-control {
+    height: 50px;
+    border-radius: none;
+    border: 0;
+    border-radius: 0;
+    border-right: 1px solid rgb(119, 119, 119);
+    margin-left: 2px;
+  }
+
+  #form-depart {
+    border-radius: 16px 0 0 16px;
+    width: 300px;
+  }
+
+  #form-destination {
+    border-radius: 0;
+    width: 300px;
+  }
+
+  #form-date {
+    border-radius: 0;
+    width: 185px;
+  }
+
+  #form-number {
+    border-radius: 0;
+    width: 130px;
+    border-right: 0;
+  }
+
+  #home-go {
+    background-image: asset-url('picto-home-loupe.png');
+    background-size: cover;
+    width: 48px;
+    height: 53px;
+    border-radius: 0 16px 16px 0;
+    margin-bottom: -1px;
+    margin-top: -2px;
+  }
+}
+
+.search-bar {
+  margin-bottom: 30px;
+  margin-left: 280px;
+  width: 971px;
+  height: 55px;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #696969;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 10px #afafaf;
+}

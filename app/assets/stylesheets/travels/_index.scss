@@ -14,14 +14,16 @@
     justify-content: center;
     padding-top: 30px;
     padding-bottom: 0px;
+    margin-bottom: 30px;
   }
 
-  .img-background {
-    position: absolute;
-    object-fit: cover;
-    top: -80px;
-    right: -80px;
-    height: 800px;
-    opacity: .2;
-  }
+ .card-links i {
+  color: #737373;
+  opacity: 0.6;
+}
+
+.card-links i:hover {
+  color: #737373;
+  opacity: 1;
+}
 }

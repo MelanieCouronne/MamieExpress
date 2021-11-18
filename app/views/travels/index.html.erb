@@ -4,27 +4,36 @@
       <% @travels.each do |travel| %>
        <% if policy(travel).show? %>
         <div class="card">
-          <h2 class="card-departure-date"><%= travel.departure_date.strftime("%A") %> <%= travel.departure_date.day %> <%= travel.departure_date.strftime('%B') %></h2>
+        <div class="card-title">
+          <h2 class="card-departure-date"><%= travel.departure_date.strftime("%A") %> <%= travel.departure_date.day %> <%= travel.departure_date.strftime('%B') %>
+          </h2>
+          <% if !policy(travel).update? %>
+            <span><%= travel.user.first_name %> <%= travel.user.last_name %></span>
+            <%= cl_image_tag travel.user.photo.key, class: "avatar", height: 50, width: 50, crop: :fill %>
+            <%#= image_tag("https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar") %>
+          <% end %>
+        </div>
 
           <div class="card-part-up">
             <div class="card-departure">
               <h3><%= travel.departure_date.to_s(:time) %></h3><%= image_tag 'trait_trajet.png', class:'trait-trajet' %><h4 class='text-departure-location'><%= travel.departure_location.capitalize %></h4>
             </div>
-              <div class="card-links">
 
-              <% if policy(travel).update? %>
-                <%= link_to edit_travel_path(travel) do %>
-                  <i class="far fa-edit"></i>
-                <% end %>
-              <% end %>
+            <div class="card-links">
 
-              <% if policy(travel).destroy? %>
-                <%= link_to travel_path(travel),
-                  method: :delete,
-                  data: { confirm: "Es-tu vraiment sûr de supprimer ce voyage ?" } do %>
-                  <i class="fas fa-trash"></i>
-                <% end %>
+            <% if policy(travel).update? %>
+              <%= link_to edit_travel_path(travel) do %>
+                <i class="far fa-edit"></i>
               <% end %>
+            <% end %>
+
+            <% if policy(travel).destroy? %>
+              <%= link_to travel_path(travel),
+                method: :delete,
+                data: { confirm: "Es-tu vraiment sûr de supprimer ce voyage ?" } do %>
+                <i class="fas fa-trash"></i>
+              <% end %>
+            <% end %>
             </div>
 
         </div>
@@ -42,11 +51,13 @@
                 <%# <%= image_tag 'seat-belt', class:'seat-belt'%><%# <%= image_tag 'seat-belt', class:'seat-belt' %>
               <%# <% end %>
           </div>
-          <%= link_to 'Details', travel_path(travel), class:"btn btn-danger" %>
+          <div class="d-flex justify-content-end">
+
+            <%= link_to 'Détails', travel_path(travel), class:"btn btn-danger" %>
+          </div>
 
       </div>
       <% end %>
     <% end %>
   </div>
-  <%= image_tag 'Logo_mamieExpress_cut.png', class:'img-background' %>
 </div>
