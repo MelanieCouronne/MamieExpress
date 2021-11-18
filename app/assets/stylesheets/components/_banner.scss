@@ -1,0 +1,23 @@
+.banner {
+  object-fit: cover;
+}
+
+.container-text-content {
+  height: 24vh;
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+
+  h3 {
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  .text-content {
+    width: 400px;
+  }
+}
