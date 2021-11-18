@@ -7,3 +7,11 @@
 .card_map{
   margin-left: 10px;
 }
+
+.card-title {
+  border-bottom: solid 1px rgb(180, 180, 180);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+}
