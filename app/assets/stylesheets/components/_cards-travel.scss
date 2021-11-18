@@ -1,12 +1,12 @@
 
 .cards {
-  padding: 20px;
+  padding: 20px 20px 20px 20px;
   width: 800px;
   margin: 0 auto;
 
   .card {
   // background-color: white;
-  padding: 30px 30px 10px 30px;
+  padding: 30px 30px 30px 30px;
   border: 1px solid rgb(200, 200, 200);
   box-shadow: 3px 3px 7px rgb(210, 210, 210);
   border-radius: 20px;
@@ -16,10 +16,17 @@
     font-size: 18px;
   }
 
-  .card-departure-date {
+  .card-title {
     border-bottom: solid 1px rgb(180, 180, 180);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-bottom: 12px;
-    margin-bottom: 16px;
+  }
+  .card-departure-date {
+    // border-bottom: solid 1px rgb(180, 180, 180);
+
+    // margin-bottom: 16px;
     font-size: 18px;
     font-weight: bold;
   }
