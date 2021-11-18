@@ -9,9 +9,11 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <%= link_to "Rechercher un trajet", "/", class: "nav-link" %>
-      </li>
+      <% if !current_page?(:controller => 'pages', :action => 'home') %>
+        <li class="nav-item">
+          <%= link_to "Rechercher un trajet", "/", class: "nav-link" %>
+        </li>
+      <% end %>
       <li class="nav-item">
       <div class="d-flex align-items-center">
         <i class="fas fa-plus-circle"></i>
