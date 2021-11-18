@@ -11,7 +11,10 @@
     <ul class="navbar-nav mr-auto">
       <% if !current_page?('/') %>
         <li class="nav-item">
-          <%= link_to "Rechercher un trajet", "/", class: "nav-link" %>
+          <div class="d-flex align-items-center">
+            <i class="fas fa-search"></i>
+            <%= link_to "Rechercher un trajet", "/", class: "nav-link" %>
+          </div>
         </li>
       <% end %>
       <li class="nav-item">
