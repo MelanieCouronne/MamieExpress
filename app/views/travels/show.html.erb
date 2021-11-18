@@ -30,7 +30,7 @@
               <%#= image_tag("https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar") %>
             <% else %>
               <div class="d-flex justify-content-end">
-                <%= link_to 'Mamie livrée', travels_path, class:"btn btn-danger", data: { confirm: "Bravo! Vous avez rendu une famille heureuse pour Noël." } %>
+                <%= link_to 'Mamie livrée', travels_path, id:"validation-travel", class:"btn btn-danger", data: { confirm: "Bravo! Vous avez rendu une famille heureuse pour Noël." } %>
                 <% @travel.status = "livree" %>
               </div>
             <% end %>

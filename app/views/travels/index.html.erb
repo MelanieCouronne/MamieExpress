@@ -2,13 +2,8 @@
   <h1>Mes trajets</h1>
     <div class="cards">
       <% @travels.each do |travel| %>
-       <% if policy(travel).show? %>
+       <% if policy(travel).show? && travel.status != "livree" %>
         <div class="card">
-          <div class="status">
-            <% if travel.status = "livree" %>
-              <h4>Mamie livrée!</h4>
-            <% end %>
-          </div>
           <div class="card-title">
             <h2 class="card-departure-date"><%= travel.departure_date.strftime("%A") %> <%= travel.departure_date.day %> <%= travel.departure_date.strftime('%B') %>
             </h2>

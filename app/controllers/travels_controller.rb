@@ -35,6 +35,7 @@ class TravelsController < ApplicationController
   def show
     @results = Geocoder.search(@travel.departure_location).first.coordinates
     @markers = [set_departure_marker, set_arrival_marker]
+    @travel.status = ""
   end
 
   def destroy
@@ -51,7 +52,7 @@ class TravelsController < ApplicationController
   end
 
   def travel_params
-    params.require(:travel).permit(:departure_location, :departure_date, :departure_hour, :arrival_location, :arrival_date, :number_passenger)
+    params.require(:travel).permit(:departure_location, :departure_date, :departure_hour, :arrival_location, :arrival_date, :number_passenger, :status)
   end
 
   def set_departure_marker
