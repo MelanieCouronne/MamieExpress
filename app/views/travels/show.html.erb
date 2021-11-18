@@ -24,8 +24,9 @@
               <% end %>
               <%= @travel.departure_date.day %> <%= @travel.departure_date.strftime('%B') %>
             </h2>
-            <% if policy(@travel).update? %>
+            <% if !policy(@travel).update? %>
               <span><%= @travel.user.first_name %> <%= @travel.user.last_name %></span>
+              <%#= cl_image_tag @travel.user.photo.key, class: "avatar", height: 50, width: 50, crop: :fill %>
               <%= image_tag("https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar") %>
             <% end %>
           </div>
