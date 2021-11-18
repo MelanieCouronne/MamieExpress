@@ -1,7 +1,32 @@
 <div class="banner">
-  <%= image_tag 'banner_mamieexpress.png', height:'380px' %>
+  <div class="search-bar">
+    <%= form_tag travels_path, class:"form-search-bar", method: :get do %>
+      <%= text_field_tag :departure,
+        params[:departure],
+        class: "form-control", id:"form-depart",
+        placeholder: "Départ"
+      %>
+      <%= text_field_tag :arrival,
+        params[:arrival],
+        class: "form-control", id:"form-destination",
+        placeholder: "Destination"
+      %>
+      <%= date_field_tag :date,
+        params[:date],
+        class: "form-control", id:"form-date",
+        placeholder: "Aujourd'hui"
+      %>
+      <%= number_field_tag :number,
+        params[:number], min: 1,
+        class: "form-control", id:"form-number",
+        placeholder: "1 passager"
+      %>
+      <%= submit_tag "", class: "btn btn-danger", id:'home-go' %>
+    <% end %>
+  </div>
 </div>
-<div class="container-home mt-4">
+
+<div class="container-home mt-3">
   <div class="container-text-content">
     <div class="text-content text-center">
       <%= image_tag 'picto-home-1.png', height:'60px' %>
