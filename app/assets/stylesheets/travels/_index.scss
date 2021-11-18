@@ -5,9 +5,7 @@
   margin: 0 auto;
   height: 80vh;
   position: relative;
-  // background-color: black;
-  // background-image: url("../../images/Logo_mamieExpress_cut.png");
-  // background-size: cover;
+
   h1 {
     font-size: 40px;
     display: flex;
@@ -25,5 +23,9 @@
 .card-links i:hover {
   color: #737373;
   opacity: 1;
+}
+
+.status {
+  display: none
 }
 }
