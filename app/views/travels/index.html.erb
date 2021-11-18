@@ -1,8 +1,5 @@
-<div class="background">
-  <div class="container">
-
-    <h1>Mes trajets</h1>
-
+<div class="container">
+  <h1>Mes trajets</h1>
     <div class="cards">
       <% @travels.each do |travel| %>
        <% if policy(travel).show? %>
@@ -15,27 +12,27 @@
             </div>
               <div class="card-links">
 
-                <% if policy(travel).update? %>
-                  <%= link_to edit_travel_path(travel) do %>
-                    <i class="far fa-edit"></i>
-                  <% end %>
+              <% if policy(travel).update? %>
+                <%= link_to edit_travel_path(travel) do %>
+                  <i class="far fa-edit"></i>
                 <% end %>
+              <% end %>
 
-                <% if policy(travel).destroy? %>
-                  <%= link_to travel_path(travel),
-                    method: :delete,
-                    data: { confirm: "Es-tu vraiment sûr de supprimer ce voyage ?" } do %>
-                    <i class="fas fa-trash"></i>
-                  <% end %>
+              <% if policy(travel).destroy? %>
+                <%= link_to travel_path(travel),
+                  method: :delete,
+                  data: { confirm: "Es-tu vraiment sûr de supprimer ce voyage ?" } do %>
+                  <i class="fas fa-trash"></i>
                 <% end %>
-              </div>
+              <% end %>
+            </div>
 
-          </div>
-          <%# <p class="time-travel"><%= travel.arrival_hour - travel.departure_hour</p> %>
-          <div class="card-arrival">
-            <%# <h3><%= travel.arrival_hour.to_s(:time) %>
-            <h4 class='text-arrival-location'><%= travel.arrival_location.capitalize %></h4>
-          </div>
+        </div>
+        <%# <p class="time-travel"><%= travel.arrival_hour - travel.departure_hour</p> %>
+        <div class="card-arrival">
+          <%# <h3><%= travel.arrival_hour.to_s(:time) %>
+          <h4 class='text-arrival-location'><%= travel.arrival_location.capitalize %></h4>
+        </div>
 
           <div class="card-passenger-number">
             <p>Nombre de passagers : <%= travel.number_passenger %></p>
@@ -47,10 +44,9 @@
           </div>
           <%= link_to 'Details', travel_path(travel), class:"btn btn-danger" %>
 
-        </div>
-       <% end %>
+      </div>
       <% end %>
-    </div>
-
+    <% end %>
   </div>
+  <%= image_tag 'Logo_mamieExpress_cut.png', class:'img-background' %>
 </div>
