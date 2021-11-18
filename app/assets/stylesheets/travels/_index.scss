@@ -1,2 +1,14 @@
 // Import page-specific CSS files here.
 @import "show";
+
+.container {
+  margin: 0 auto;
+
+  h1 {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+    padding-bottom: 0px;
+  }
+}

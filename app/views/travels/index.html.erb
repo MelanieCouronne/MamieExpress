@@ -7,23 +7,7 @@
       <% @travels.each do |travel| %>
        <% if policy(travel).show? %>
         <div class="card">
-          <h2 class="card-departure-date">
-          <% if travel.departure_date.strftime("%A") == "Monday" %>
-            <%= "Lundi" %>
-            <% elsif travel.departure_date.strftime("%A") == "Tuesday" %>
-              <%= "Mardi" %>
-            <% elsif travel.departure_date.strftime("%A") == "Wednesday" %>
-              <%= "Mercredi" %>
-            <% elsif travel.departure_date.strftime("%A") == "Thursday" %>
-              <%= "Jeudi" %>
-            <% elsif travel.departure_date.strftime("%A") == "Friday" %>
-              <%= "Vendredi" %>
-            <% elsif travel.departure_date.strftime("%A") == "Saturday" %>
-              <%= "Samedi" %>
-            <% elsif travel.departure_date.strftime("%A") == "Sunday" %>
-              <%= "Dimanche" %>
-          <% end %>
-          <%= travel.departure_date.day %> <%= travel.departure_date.strftime('%B') %></h2>
+          <h2 class="card-departure-date"><%= travel.departure_date.strftime("%A") %> <%= travel.departure_date.day %> <%= travel.departure_date.strftime('%B') %></h2>
 
           <div class="card-part-up">
             <div class="card-departure">
@@ -61,7 +45,7 @@
                 <%# <%= image_tag 'seat-belt', class:'seat-belt'%><%# <%= image_tag 'seat-belt', class:'seat-belt' %>
               <%# <% end %>
           </div>
-
+          <%= link_to 'Details', travel_path(travel), class:"btn btn-danger" %>
 
         </div>
        <% end %>
