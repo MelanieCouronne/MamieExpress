@@ -1,4 +1,4 @@
-<div class="container img-background">
+<div class="container">
   <div class="row justify-content-center align-items-center">
     <div class="col-xs-12 col-sm-8 col-md-6">
     <div>
@@ -9,20 +9,19 @@
         <%-# ----------- Location form ----------- -%>
         <div>
           <div class="col-12">
-            <%= f.input :departure_location, label: 'Lieu de départ', placeholder: 'Rechercher une adresse' %>
+            <%= f.input :departure_location, label: ' Lieu de départ', placeholder: 'Rechercher une adresse' %>
           </div>
           <div class="col-12">
-            <%= f.input :arrival_location, label: "Lieu d'arrivée", placeholder: 'Rechercher une adresse' %>
+            <%= f.input :arrival_location, label: " Lieu d'arrivée", placeholder: 'Rechercher une adresse' %>
           </div>
         </div>
         <%-# ----------- Date form ----------- -%>
         <div class="col-12">
-          <%= f.input :departure_date, label: "Date (aaaa/mm/jj)" %>
-          <% # = f.input :departure_hour, label: "Heure (hh:mm)" %>
+          <%= f.input :departure_date, label: " Date (aaaa/mm/jj) - Heure (hh:mm)" %>
         </div>
         <%-# ----------- Passenger form ----------- -%>
         <div class="col-12">
-          <%= f.input :number_passenger, label: "Passager" %>
+          <%= f.input :number_passenger, label: " Passager" %>
         </div>
         <div class="col-12 mt-4 d-flex justify-content-between align-items-center">
         <%= f.button :submit, 'Créer!', class: 'btn btn-danger' %>
