@@ -9,8 +9,8 @@
           </h2>
           <% if !policy(travel).update? %>
             <span><%= travel.user.first_name %> <%= travel.user.last_name %></span>
-            <%#= cl_image_tag travel.user.photo.key, class: "avatar", height: 50, width: 50, crop: :fill %>
-            <%= image_tag("https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar") %>
+            <%= cl_image_tag travel.user.photo.key, class: "avatar", height: 50, width: 50, crop: :fill %>
+            <%#= image_tag("https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar") %>
           <% end %>
         </div>
 
