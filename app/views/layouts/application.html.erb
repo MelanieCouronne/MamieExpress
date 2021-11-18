@@ -16,8 +16,10 @@
 
   <body>
     <div><%= render 'shared/navbar' %></div>
-    <p class="alert alert-warning"><%= notice %></p>
-    <p class="alert alert-danger"><%= alert %></p>
+    <div>
+      <p class="alert alert-warning"><%= notice %></p>
+      <p class="alert alert-danger"><%= alert %></p>
+    </div>
     <%= yield %>
     <div><%= render 'shared/footer' %></div>
   </body>

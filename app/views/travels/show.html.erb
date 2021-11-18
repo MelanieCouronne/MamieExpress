@@ -5,31 +5,35 @@
     <div class="cards">
        <% if policy(@travel).show? %>
         <div class="card">
-        <div class="card-title">
-          <h2 class="card-departure-date">
-            <% if @travel.departure_date.strftime("%A") == "Monday" %>
-              <%= "Lundi" %>
-              <% elsif @travel.departure_date.strftime("%A") == "Tuesday" %>
-                <%= "Mardi" %>
-              <% elsif @travel.departure_date.strftime("%A") == "Wednesday" %>
-                <%= "Mercredi" %>
-              <% elsif @travel.departure_date.strftime("%A") == "Thursday" %>
-                <%= "Jeudi" %>
-              <% elsif @travel.departure_date.strftime("%A") == "Friday" %>
-                <%= "Vendredi" %>
-              <% elsif @travel.departure_date.strftime("%A") == "Saturday" %>
-                <%= "Samedi" %>
-              <% elsif @travel.departure_date.strftime("%A") == "Sunday" %>
-                <%= "Dimanche" %>
+          <div class="card-title">
+            <h2 class="card-departure-date">
+              <% if @travel.departure_date.strftime("%A") == "Monday" %>
+                <%= "Lundi" %>
+                <% elsif @travel.departure_date.strftime("%A") == "Tuesday" %>
+                  <%= "Mardi" %>
+                <% elsif @travel.departure_date.strftime("%A") == "Wednesday" %>
+                  <%= "Mercredi" %>
+                <% elsif @travel.departure_date.strftime("%A") == "Thursday" %>
+                  <%= "Jeudi" %>
+                <% elsif @travel.departure_date.strftime("%A") == "Friday" %>
+                  <%= "Vendredi" %>
+                <% elsif @travel.departure_date.strftime("%A") == "Saturday" %>
+                  <%= "Samedi" %>
+                <% elsif @travel.departure_date.strftime("%A") == "Sunday" %>
+                  <%= "Dimanche" %>
+              <% end %>
+              <%= @travel.departure_date.day %> <%= @travel.departure_date.strftime('%B') %>
+            </h2>
+            <% if !policy(@travel).update? %>
+              <span><%= @travel.user.first_name %> <%= @travel.user.last_name %></span>
+              <%= cl_image_tag @travel.user.photo.key, class: "avatar", height: 50, width: 50, crop: :fill %>
+              <%#= image_tag("https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar") %>
+            <% else %>
+              <div class="d-flex justify-content-end">
+                <%= link_to 'Mamie livrée', travels_path, class:"btn btn-danger", data: { confirm: "Bravo! Vous avez rendu une famille heureuse pour Noël." } %>
+              </div>
             <% end %>
-            <%= @travel.departure_date.day %> <%= @travel.departure_date.strftime('%B') %>
-          </h2>
-          <% if !policy(@travel).update? %>
-            <h4><%= @travel.user.first_name %> <%= @travel.user.last_name %></h4>
-            <%= image_tag("https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar") %>
-          <% end %>
-        </div>
-
+          </div>
           <div class="card-part-up">
             <div class="card-departure">
               <h3><%= @travel.departure_date.to_s(:time) %></h3><%= image_tag 'trait_trajet.png', class:'trait-trajet' %><h4 class='text-departure-location'><%= @travel.departure_location.capitalize %></h4>

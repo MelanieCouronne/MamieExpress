@@ -2,16 +2,18 @@
   bottom:0;
   background: #F4F4F4;
   display: flex;
+  position: sticky;
+  bottom: 0;
+  height: 55px;
   align-items: center;
   justify-content: space-between;
   height: 65px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
-  left: 0;
-  bottom: 0;
   width: 100%;
-  margin-top: 1em;
+  margin-top: 180px;
 }
+
 .footer-links {
   display: flex;
   align-items: center;
