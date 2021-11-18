@@ -4,7 +4,15 @@
       <% @travels.each do |travel| %>
        <% if policy(travel).show? %>
         <div class="card">
-          <h2 class="card-departure-date"><%= travel.departure_date.strftime("%A") %> <%= travel.departure_date.day %> <%= travel.departure_date.strftime('%B') %></h2>
+        <div class='card-title'>
+
+          <h2 class="card-departure-date">
+          <%= travel.departure_date.strftime("%A") %> <%= travel.departure_date.day %> <%= travel.departure_date.strftime('%B') %></h2>
+              <% if !policy(travel).update? %>
+                <h4><%= travel.user.first_name %> <%= travel.user.last_name %></h4>
+                <%= image_tag("https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar") %>
+              <% end %>
+        </div>
 
           <div class="card-part-up">
             <div class="card-departure">
@@ -42,13 +50,13 @@
                 <%# <%= image_tag 'seat-belt', class:'seat-belt'%><%# <%= image_tag 'seat-belt', class:'seat-belt' %>
               <%# <% end %>
           </div>
+
           <div>
-          <%= link_to 'Details', travel_path(travel), class:"btn btn-danger" %>
+            <%= link_to 'Détails', travel_path(travel), class:"btn btn-danger" %>
           </div>
 
       </div>
       <% end %>
     <% end %>
   </div>
-  <%= image_tag 'Logo_mamieExpress_cut.png', class:'img-background' %>
 </div>
