@@ -21,7 +21,15 @@ class TravelsController < ApplicationController
   end
 
   def index
-    @travels = policy_scope(Travel)
+    if params[:departure].present? && params[:arrival].present? && params[:date].present? && params[:number].present?
+      departure = policy_scope(Travel).search_by_departure(params[:departure])
+      arrival = departure.search_by_arrival(params[:arrival])
+      date = arrival.search_by_date(params[:date])
+      @travels = date.search_by_number(params[:number])
+    else
+      @travels = policy_scope(Travel)
+      # @travels = Travel.all
+    end
   end
 
   def show
