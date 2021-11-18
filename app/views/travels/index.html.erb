@@ -8,7 +8,7 @@
        <% if policy(travel).show? %>
         <div class="card">
           <h2 class="card-departure-date">
-            <% if travel.departure_date.strftime("%A") == "Monday" %>
+          <% if travel.departure_date.strftime("%A") == "Monday" %>
             <%= "Lundi" %>
             <% elsif travel.departure_date.strftime("%A") == "Tuesday" %>
               <%= "Mardi" %>
@@ -23,11 +23,11 @@
             <% elsif travel.departure_date.strftime("%A") == "Sunday" %>
               <%= "Dimanche" %>
           <% end %>
-          <%= travel.departure_date.to_formatted_s(:rfc822) %></h2>
+          <%= travel.departure_date.day %> <%= travel.departure_date.strftime('%B') %></h2>
 
           <div class="card-part-up">
             <div class="card-departure">
-              <h3><%= travel.departure_hour.to_s(:time) %></h3><%= image_tag 'trait_trajet.png', class:'trait-trajet' %><h4 class='text-departure-location'><%= travel.departure_location.capitalize %></h4>
+              <h3><%= travel.departure_date.to_s(:time) %></h3><%= image_tag 'trait_trajet.png', class:'trait-trajet' %><h4 class='text-departure-location'><%= travel.departure_location.capitalize %></h4>
             </div>
               <div class="card-links">
 
