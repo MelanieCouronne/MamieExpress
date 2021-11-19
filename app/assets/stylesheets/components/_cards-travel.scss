@@ -16,14 +16,24 @@
   }
 
   .card-departure-date {
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .complement-address {
+    margin-left: 121px;
+    font-size: 13px;
+  }
+
+  .region {
+    font-size: 15px;
     font-weight: bold;
   }
 
   .card-title {
     display: flex;
     border-bottom: 1px solid rgb(200, 200, 200);
-    padding-bottom: 12px;
+    padding-bottom: 5px;
     justify-content: space-between;
     align-items: center;
 
@@ -32,13 +42,15 @@
     display: flex;
     align-items: baseline;
     position: relative;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
     margin-left: 30px;
   }
 
   .card-part-up {
     display: flex;
     justify-content: space-between;
+    height: 22px;
+    margin-top: 8px;
   }
 
     .trait-trajet{
@@ -51,11 +63,14 @@
     .text-departure-location {
       font-size: 18px;
       margin-left: 45px;
+      font-weight: bold;
     }
 
     .text-arrival-location {
       font-size: 18px;
-      margin-left: 133px;
+      font-weight: bold;
+      margin-left: 124px;
+      margin-bottom: 0px;
     }
 
     p {
@@ -65,6 +80,7 @@
 
     .card-passenger-number {
       display: flex;
+      justify-content: space-between;
       margin-top: 10px;
       margin-left: 30px;
       font-size: 12px;

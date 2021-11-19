@@ -1,37 +1,34 @@
-<div class="container">
+<div class="container-index">
   <h1>Mes trajets</h1>
     <div class="cards">
       <% @travels.each do |travel| %>
-       <% if policy(travel).show? %>
+      <% if policy(travel).show? %>
         <div class="card">
-          <div class="status">
-            <% if travel.status = "livree" %>
-              <h4>Mamie livrée!</h4>
-            <% end %>
-          </div>
           <div class="card-title">
             <h2 class="card-departure-date"><%= travel.departure_date.strftime("%A") %> <%= travel.departure_date.day %> <%= travel.departure_date.strftime('%B') %>
             </h2>
-            <% if !policy(travel).update? %>
+            <% if policy(travel).update? %>
               <span><%= travel.user.first_name %> <%= travel.user.last_name %></span>
-              <%= cl_image_tag travel.user.photo.key, class: "avatar", height: 50, width: 50, crop: :fill %>
-              <%#= image_tag("https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar") %>
+              <% if travel.user.photo.attached? %>
+                <%= cl_image_tag travel.user.photo.key, class: "avatar", height: 50, width: 50, crop: :fill %>
+              <% else %>
+                <%= image_tag("https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar") %>
+              <% end %>
             <% end %>
           </div>
 
-            <div class="card-part-up">
-              <div class="card-departure">
-                <h3><%= travel.departure_date.to_s(:time) %></h3><%= image_tag 'trait_trajet.png', class:'trait-trajet' %><h4 class='text-departure-location'><%= travel.departure_location.capitalize %></h4>
-              </div>
-
-              <div class="card-links">
+          <div class="card-part-up">
+            <div class="card-departure">
+              <h3><%= travel.departure_date.to_s(:time) %></h3>
+              <%= image_tag 'trait_trajet.png', class:'trait-trajet' %><h4 class='text-departure-location'><%= travel.departure_location.split(', ')[1] %>,&nbsp&nbsp;</h4><h5 class="region"><%= travel.departure_location.split(',')[2] %></h5>
+            </div>
+            <div class="card-links">
 
               <% if policy(travel).update? %>
                 <%= link_to edit_travel_path(travel) do %>
                   <i class="far fa-edit"></i>
                 <% end %>
               <% end %>
-
               <% if policy(travel).destroy? %>
                 <%= link_to travel_path(travel),
                   method: :delete,
@@ -39,13 +36,25 @@
                   <i class="fas fa-trash"></i>
                 <% end %>
               <% end %>
-              </div>
-
+            </div>
           </div>
-          <%# <p class="time-travel"><%= travel.arrival_hour - travel.departure_hour</p> %>
-          <div class="card-arrival">
-            <%# <h3><%= travel.arrival_hour.to_s(:time) %>
-            <h4 class='text-arrival-location'><%= travel.arrival_location.capitalize %></h4>
+          <p class='complement-address'><%= travel.departure_location.split(', ')[0] %></p>
+
+
+        <div class="card-arrival">
+          <%# <h3><%= travel.arrival_hour.to_s(:time) %>
+          <h4 class='text-arrival-location'><%= travel.arrival_location.split(', ')[1]%></h4>
+          <p class="complement-address"><%= travel.arrival_location.split(', ')[0] %></p>
+        </div>
+
+          <div class="card-passenger-number">
+            <p>Nombre de passagers : <%= travel.number_passenger %></p>
+              <%# <% if travel.number_passenger == 1 %>
+                <%# <%= image_tag 'seat-belt', class:'seat-belt'%>
+              <%# <% elsif travel.number_passenger == 2 %>
+                <%# <%= image_tag 'seat-belt', class:'seat-belt'%><%# <%= image_tag 'seat-belt', class:'seat-belt' %>
+              <%# <% end %>
+            <%= link_to 'Détails', travel_path(travel), class:"btn btn-danger detail" %>
           </div>
 
             <div class="card-passenger-number">
