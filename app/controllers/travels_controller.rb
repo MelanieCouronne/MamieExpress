@@ -44,9 +44,12 @@ class TravelsController < ApplicationController
   end
 
   def update
-    @travel.status = true
-    @travel.save
-
+    if params[:status]
+      @travel.status = true
+      @travel.save
+    else
+      @travel.update(travel_params)
+    end
     redirect_to travels_path
   end
 
