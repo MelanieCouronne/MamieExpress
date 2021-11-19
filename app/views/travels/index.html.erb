@@ -54,6 +54,9 @@
                 <%# <%= image_tag 'seat-belt', class:'seat-belt'%><%# <%= image_tag 'seat-belt', class:'seat-belt' %>
               <%# <% end %>
             <%= link_to 'Détails', travel_path(travel), class:"btn btn-danger detail" %>
+            <% if !policy(travel).update? && travel.number_passenger > 0 %>
+              <%= link_to 'Réserver', seats_travel_path(travel, number_passenger: travel.number_passenger), data: { confirm: "Votre réservation a bien été prise en compte" }, class:"btn btn-outline-danger" %>
+            <% end %>
           </div>
 
             <div class="card-passenger-number">
