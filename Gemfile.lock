@@ -121,19 +121,16 @@ GEM
     marcel (1.0.2)
     matrix (0.4.2)
     method_source (1.0.0)
-    mime-types (3.3.1)
+    mime-types (3.4.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2021.0901)
+    mime-types-data (3.2021.1115)
     mini_mime (1.1.2)
     minitest (5.14.4)
     msgpack (1.4.2)
     netrc (0.11.0)
     nio4r (2.5.8)
-    nokogiri (1.12.5-x86_64-darwin)
-
+    nokogiri (1.12.5-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.12.5-x86_64-linux)
-
     orm_adapter (0.5.0)
     pg (1.2.3)
     pg_search (2.3.5)
@@ -152,6 +149,7 @@ GEM
       nio4r (~> 2.0)
     pundit (2.1.1)
       activesupport (>= 3.0.0)
+    racc (1.6.0)
     rack (2.2.3)
     rack-proxy (0.7.0)
       rack
@@ -239,7 +237,7 @@ GEM
     unf_ext (0.0.8)
     warden (1.2.9)
       rack (>= 2.0.9)
-    web-console (4.1.0)
+    web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
@@ -260,8 +258,7 @@ GEM
     zeitwerk (2.5.1)
 
 PLATFORMS
-  x86_64-darwin-20
-  x86_64-linux
+  arm64-darwin-20
 
 DEPENDENCIES
   autoprefixer-rails (= 10.2.5)
@@ -298,4 +295,4 @@ RUBY VERSION
    ruby 2.7.4p191
 
 BUNDLED WITH
-   2.2.28
+   2.2.29
