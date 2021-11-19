@@ -44,6 +44,13 @@ class TravelsController < ApplicationController
     redirect_to travels_path
   end
 
+  def update
+    @travel.status = true
+    @travel.save
+
+    redirect_to travels_path
+  end
+
   private
 
   def set_travel
