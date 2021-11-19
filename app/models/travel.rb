@@ -35,4 +35,10 @@ class Travel < ApplicationRecord
     using: {
       tsearch: { prefix: true }
   }
+
+  # pg_search_scope :search_global,
+  #   against: [ :departure_location, :arrival_location, :departure_date,  :number_passenger  ],
+  #   using: {
+  #     tsearch: { prefix: true }
+  #   }
 end

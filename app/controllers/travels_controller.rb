@@ -21,8 +21,11 @@ class TravelsController < ApplicationController
   end
 
   def index
+    # query = [params[:departure], params[:arrival], params[:date], params[:number]].join(' ').strip
+    # if query.blank?
+    #   @travels = policy_scope(Travel).global_search(query)
     if params[:departure].present? && params[:arrival].present? && params[:date].present? && params[:number].present?
-      departure = policy_scope(Travel).search_by_departure(params[:departure])
+      departure = policy_scope(Travel).where.not(user: current_user).search_by_departure(params[:departure])
       arrival = departure.search_by_arrival(params[:arrival])
       date = arrival.search_by_date(params[:date])
       @travels = date.search_by_number(params[:number])
