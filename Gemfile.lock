@@ -129,8 +129,11 @@ GEM
     msgpack (1.4.2)
     netrc (0.11.0)
     nio4r (2.5.8)
-    nokogiri (1.12.5-arm64-darwin)
+
+    nokogiri (1.12.5-x86_64-darwin)
+
       racc (~> 1.4)
+    nokogiri (1.12.5-x86_64-linux)
     orm_adapter (0.5.0)
     pg (1.2.3)
     pg_search (2.3.5)
@@ -149,7 +152,6 @@ GEM
       nio4r (~> 2.0)
     pundit (2.1.1)
       activesupport (>= 3.0.0)
-    racc (1.6.0)
     rack (2.2.3)
     rack-proxy (0.7.0)
       rack
