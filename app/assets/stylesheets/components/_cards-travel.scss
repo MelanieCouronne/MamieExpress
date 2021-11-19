@@ -93,13 +93,17 @@
 
     .card-links i {
       color: rgb(100, 100, 100);
-      font-size: 16px;
+      font-size: 18px;
       margin-left: 10px;
       opacity: 0.6;
     }
 
     .card-links i:hover {
       opacity: 1;
+    }
+
+    .card-button {
+      display: flex;
     }
 
     .fa-edit {
