@@ -3,7 +3,7 @@
     <h1>Résumé du trajet</h1>
 
     <div class="cards">
-       <% if policy(@travel).show? %>
+       <% if policy(@travel).show? && travel.status == false %>
         <div class="card">
           <div class="card-title">
             <h2 class="card-departure-date">
@@ -31,7 +31,6 @@
             <% else %>
               <div class="d-flex justify-content-end">
                 <%= link_to 'Mamie livrée', travels_path, id:"validation-travel", class:"btn btn-danger", data: { confirm: "Bravo! Vous avez rendu une famille heureuse pour Noël." } %>
-                <% @travel.status = "livree" %>
               </div>
             <% end %>
           </div>

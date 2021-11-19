@@ -1,8 +1,8 @@
 
-const hiddenCard = () => {
+const hiddenCard = (item) => {
   const btn = document.querySelector("#validation-travel");
   btn.addEventListener("click", (event) => {
-  @travel.status = true
+  item.status = true
   });
 }
 
