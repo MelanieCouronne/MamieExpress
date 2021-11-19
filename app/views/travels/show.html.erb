@@ -17,7 +17,7 @@
               <% end %>
             <% else %>
               <div class="d-flex justify-content-end">
-                <%= link_to 'Mamie livrée', travel_path(@travel), id:"validation-travel", class:"btn btn-danger", method: 'PATCH', data: { confirm: "Bravo! Vous avez rendu une famille heureuse pour Noël." } %>
+                <%= link_to 'Mamie livrée', travel_path(@travel, status: true), id:"validation-travel", class:"btn btn-danger", method: 'PATCH', data: { confirm: "Bravo! Vous avez rendu une famille heureuse pour Noël." } %>
               </div>
             <% end %>
           </div>

@@ -20,4 +20,8 @@ class TravelPolicy < ApplicationPolicy
   def destroy?
     record.user == user  # Only travel creator can update it
   end
+
+  def seats?
+    record.user != user
+  end
 end
