@@ -9,8 +9,7 @@
               <% else %>
                 <%= image_tag 'mamie_head-small.png', class: "avatar-big" %>
               <% end %>
-
-            <%= f.input :photo, as: :file %>
+            <%= f.input :photo, as: :file, class:"btn btn-danger" %>
             <span class="font-weight-bold"id='name-user'></span>
             <span class="text-black-50" id='email-user'></span>
             <span></span>
@@ -23,43 +22,43 @@
               </div>
               <div class="row">
                 <div class="col-md-6">
-                  <%= f.input :first_name, placeholder: 'first name', value: @user.first_name %>
+                  <%= f.input :first_name, label: "Prénom", placeholder: 'Mon prénom', value: @user.first_name %>
                 </div>
                 <div class="col-md-6">
-                  <%= f.input :last_name, placeholder: 'last name', value: @user.last_name %>
+                  <%= f.input :last_name, label: "Nom", placeholder: 'Mon nom', value: @user.last_name %>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-12">
-                  <%= f.input :email, placeholder: 'email', value: @user.email %>
+                  <%= f.input :email, label: "Email", placeholder: 'Mon email', value: @user.email %>
                 </div>
               </div>
                <div class="row">
                 <div class="col-md-12">
-                  <%= f.input :phone_number, placeholder: 'phone number', value: @user.phone_number %>
+                  <%= f.input :phone_number, label: "Numéro de téléphone", placeholder: 'Mon numéro', value: @user.phone_number %>
                 </div>
               </div>
 
-              <h4 class="text-left">Change password</h4>
+              <h4 class="text-left">Changer mon mot de passe</h4>
 
               <div class="row">
                 <div class="col">
                   <div class="form-group">
-                      <%= f.input :password, placeholder: '••••••', value: @user.password %>
+                      <%= f.input :current_password, label: "Actuel", placeholder: '••••••', value: @user.password %>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col">
                   <div class="form-group">
-                      <%= f.input :password_confirmation, placeholder: '••••••', value: @user.password %>
+                      <%= f.input :password, label: "Nouveau", placeholder: '••••••', value: @user.password %>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col">
                   <div class="form-group">
-                      <%= f.input :current_password, placeholder: '••••••', value: @user.password %>
+                      <%= f.input :password_confirmation, label: "Confirmation", placeholder: '••••••', value: @user.password %>
                   </div>
                 </div>
               </div>
@@ -70,14 +69,13 @@
             <div class>
               <div class="d-flex justify-content-between align-items-center experience">
                 <span>Je suis chauffeur</span>
-                <span class="border px-3 p-1 add-experience">&nbsp;Experience</span>
               </div><br>
               <div class="col-md-12">
-                <%= f.input :type_of_car, placeholder: 'voiture', value: @user.type_of_car %>
+                <%= f.input :type_of_car, label: "Voiture", placeholder: 'Ma voiture', value: @user.type_of_car %>
               </div> <br>
             </div>
           </div>
-        <%= f.button :submit, 'Save Profile',class: "btn btn-danger", id: "btn-profile" %>
+        <%= f.button :submit, 'Confirmer',class: "btn btn-danger", id: "btn-profile" %>
       </div>
     <% end %>
   </div>
