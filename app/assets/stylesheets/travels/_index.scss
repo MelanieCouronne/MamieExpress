@@ -9,6 +9,15 @@
   background-repeat: no-repeat;
 }
 
+.text-bold {
+  font-weight: bold;
+}
+
+.card-user {
+  display: flex;
+  align-items: flex-end;
+}
+
 .container-index {
   margin: 0 auto;
   min-height: 79vh;
