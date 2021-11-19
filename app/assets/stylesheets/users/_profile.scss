@@ -44,7 +44,7 @@
 // }
 
 #ploplo {
-  height: 430px;
+  height: 680px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -58,4 +58,11 @@
 h1 {
   display: flex;
   justify-content: center;
+}
+
+.container-index {
+  margin: 0 auto;
+  min-height: 79vh;
+  height: auto;
+  position: relative;
 }

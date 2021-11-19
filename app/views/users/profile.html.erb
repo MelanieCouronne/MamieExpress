@@ -1,5 +1,5 @@
   <h1>Mon profil</h1>
-  <div class="container rounded bg-white">
+  <div class="container-profile">
     <%= simple_form_for @user, url: user_registration_path do |f| %>
       <div class="row" id="ploplo">
         <div class="col-md-3 border-right">
@@ -75,14 +75,6 @@
               <div class="col-md-12">
                 <%= f.input :type_of_car, placeholder: 'voiture', value: @user.type_of_car %>
               </div> <br>
-            </div>
-            <div class>
-              <div class="d-flex justify-content-between align-items-center experience">
-                <span>J'ai une granny</span>
-                <span class="border px-3 p-1 add-experience">
-                  <i class="fa fa-plus"></i>&nbsp;Experience
-                </span>
-              </div><br>
             </div>
           </div>
         <%= f.button :submit, 'Save Profile',class: "btn btn-danger", id: "btn-profile" %>
