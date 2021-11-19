@@ -1,5 +1,5 @@
 class TravelsController < ApplicationController
-  before_action :set_travel, only: [:show, :edit, :update, :destroy]
+  before_action :set_travel, only: [:show, :edit, :update, :destroy, :seats]
 
   def new
     @travel = current_user.travels.new
@@ -44,11 +44,24 @@ class TravelsController < ApplicationController
   end
 
   def update
-    @travel.status = true
-    @travel.save
-
+    if params[:status]
+      @travel.status = true
+      @travel.save
+    else
+      @travel.update(travel_params)
+    end
     redirect_to travels_path
   end
+
+  def seats
+    if params[:number_passenger] && params[:number_passenger].to_i >= 1
+      @travel.number_passenger -= 1
+      @travel.save
+
+    end
+    redirect_to travels_path
+  end
+
 
   private
 
