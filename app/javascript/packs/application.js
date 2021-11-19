@@ -36,6 +36,7 @@ import "bootstrap";
 import { initAutocomplete } from '../plugins/init_autocomplete.js';
 import { updateEmail } from '../components/change_email_user.js';
 import { updateName } from '../components/change_name_user.js';
+// import { hiddenCard } from '../plugins/hide-card.js'
 
 // import { initSelect2 } from '../components/init_select2';
 
@@ -45,5 +46,5 @@ document.addEventListener('turbolinks:load', () => {
   initAutocomplete();
   updateEmail();
   updateName();
-
+  // hiddenCard();
 });
