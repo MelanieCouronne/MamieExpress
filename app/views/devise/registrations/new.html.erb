@@ -1,8 +1,9 @@
 <div class="container">
   <div class="row justify-content-center align-items-center">
     <div class="col-xs-12 col-sm-8 col-md-6">
+      <br><br>
       <h2>S'inscrire</h2>
-
+      <br>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= f.error_notification %>
 
@@ -21,10 +22,11 @@
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Sign up" %>
+          <%= f.button :submit, "Sign up", class: 'btn btn-danger' %>
         </div>
       <% end %>
+      <br><br>
+      <%= render "devise/shared/links" %>
     </div>
   </div>
 </div>
-<%= render "devise/shared/links" %>
