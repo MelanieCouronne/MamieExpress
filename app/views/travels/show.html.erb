@@ -29,7 +29,7 @@
               <% if @travel.user.photo.attached? %>
                 <%= cl_image_tag @travel.user.photo.key, class: "avatar", height: 50, width: 50, crop: :fill %>
               <% else %>
-                <%= image_tag("https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar") %>
+                <%= image_tag("mamie_head-small.png", class: "avatar") %>
               <% end %>
             <% else %>
               <div class="d-flex justify-content-end">

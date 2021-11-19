@@ -35,7 +35,6 @@ class TravelsController < ApplicationController
   def show
     @results = Geocoder.search(@travel.departure_location).first.coordinates
     @markers = [set_departure_marker, set_arrival_marker]
-    @travel.status = ""
   end
 
   def destroy

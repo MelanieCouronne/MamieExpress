@@ -12,7 +12,7 @@
               <% if travel.user.photo.attached? %>
                 <%= cl_image_tag travel.user.photo.key, class: "avatar", height: 50, width: 50, crop: :fill %>
               <% else %>
-                <%= image_tag("https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar") %>
+                <%= image_tag("mamie_head-small.png", class: "avatar") %>
               <% end %>
             <% end %>
           </div>
@@ -56,18 +56,6 @@
               <%# <% end %>
             <%= link_to 'Détails', travel_path(travel), class:"btn btn-danger detail" %>
           </div>
-
-            <div class="card-passenger-number">
-              <p>Nombre de passagers : <%= travel.number_passenger %></p>
-                <%# <% if travel.number_passenger == 1 %>
-                  <%# <%= image_tag 'seat-belt', class:'seat-belt'%>
-                <%# <% elsif travel.number_passenger == 2 %>
-                  <%# <%= image_tag 'seat-belt', class:'seat-belt'%><%# <%= image_tag 'seat-belt', class:'seat-belt' %>
-                <%# <% end %>
-            </div>
-            <div class="d-flex justify-content-end">
-              <%= link_to 'Détails', travel_path(travel), class:"btn btn-danger" %>
-            </div>
         </div>
       <% end %>
     <% end %>
