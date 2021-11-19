@@ -19,3 +19,8 @@ li, .nav-item, .nav-link {
 li, .nav-link {
   margin: 0 10px 0 0;
 }
+
+.nav-item {
+  display: flex;
+  align-items: center;
+}
