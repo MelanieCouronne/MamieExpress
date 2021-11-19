@@ -1,29 +1,13 @@
 <div class="background">
-  <div class="container">
+  <div class="container-show">
     <h1>Résumé du trajet</h1>
 
     <div class="cards">
        <% if policy(@travel).show? %>
         <div class="card">
           <div class="card-title">
-            <h2 class="card-departure-date">
-              <% if @travel.departure_date.strftime("%A") == "Monday" %>
-                <%= "Lundi" %>
-                <% elsif @travel.departure_date.strftime("%A") == "Tuesday" %>
-                  <%= "Mardi" %>
-                <% elsif @travel.departure_date.strftime("%A") == "Wednesday" %>
-                  <%= "Mercredi" %>
-                <% elsif @travel.departure_date.strftime("%A") == "Thursday" %>
-                  <%= "Jeudi" %>
-                <% elsif @travel.departure_date.strftime("%A") == "Friday" %>
-                  <%= "Vendredi" %>
-                <% elsif @travel.departure_date.strftime("%A") == "Saturday" %>
-                  <%= "Samedi" %>
-                <% elsif @travel.departure_date.strftime("%A") == "Sunday" %>
-                  <%= "Dimanche" %>
-              <% end %>
-              <%= @travel.departure_date.day %> <%= @travel.departure_date.strftime('%B') %>
-            </h2>
+            <h2 class="card-departure-date"><%= @travel.departure_date.strftime("%A") %> <%= @travel.departure_date.day %> <%= @travel.departure_date.strftime('%B') %></h2>
+
             <% if !policy(@travel).update? %>
               <span><%= @travel.user.first_name %> <%= @travel.user.last_name %></span>
               <% if @travel.user.photo.attached? %>
@@ -37,9 +21,11 @@
               </div>
             <% end %>
           </div>
+
           <div class="card-part-up">
             <div class="card-departure">
-              <h3><%= @travel.departure_date.to_s(:time) %></h3><%= image_tag 'trait_trajet.png', class:'trait-trajet' %><h4 class='text-departure-location'><%= @travel.departure_location.capitalize %></h4>
+              <h3><%= @travel.departure_date.to_s(:time) %></h3>
+              <%= image_tag 'trait_trajet.png', class:'trait-trajet' %><h4 class='text-departure-location'><%= @travel.departure_location.split(', ')[1] %>,&nbsp&nbsp;</h4><h5 class="region"><%= @travel.departure_location.split(',')[2] %></h5>
             </div>
               <div class="card-links">
 
@@ -58,9 +44,12 @@
                 <% end %>
               </div>
           </div>
+          <p class='complement-address'><%= @travel.departure_location.split(', ')[0] %></p>
+
 
           <div class="card-arrival">
-            <h4 class='text-arrival-location'><%= @travel.arrival_location.capitalize %></h4>
+            <h4 class='text-arrival-location'><%= @travel.arrival_location.split(', ')[1]%></h4>
+            <p class="complement-address"><%= @travel.arrival_location.split(', ')[0] %></p>
           </div>
 
           <div class="card-passenger-number">
