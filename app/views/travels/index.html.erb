@@ -7,7 +7,7 @@
           <div class="card-title">
             <h2 class="card-departure-date"><%= travel.departure_date.strftime("%A") %> <%= travel.departure_date.day %> <%= travel.departure_date.strftime('%B') %></h2>
             <div class="card-user">
-              <% if policy(travel).update? %>
+              <% if !policy(travel).update? %>
                 <p class="text-bold mr-3"><%= travel.user.first_name %>&nbsp<%= travel.user.last_name %></p>
                 <% if travel.user.photo.attached? %>
                   <%= cl_image_tag travel.user.photo.key, class: "avatar", height: 50, width: 50, crop: :fill %>
