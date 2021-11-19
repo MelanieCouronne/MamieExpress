@@ -1,21 +1,18 @@
 // Import page-specific CSS files here.
 @import "show";
 
-body {
-  // height: 100vh;
-  // width: 100%;
-  // background-color: black;
+#background {
   background-image: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.97)),
                     asset-url("Logo_mamieExpress_cut.png");
   background-position: right;
   background-position-y: -5px;
   background-repeat: no-repeat;
-  // background-size: cover;
 }
 
-.container {
+.container-index {
   margin: 0 auto;
-  height: 80vh;
+  min-height: 79vh;
+  height: auto;
   position: relative;
 
   h1 {
