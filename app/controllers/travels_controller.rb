@@ -30,7 +30,7 @@ class TravelsController < ApplicationController
       date = arrival.search_by_date(params[:date])
       @travels = date.search_by_number(params[:number])
     else
-      @travels = policy_scope(Travel)
+      @travels = policy_scope(Travel).where(user: current_user)
       # @travels = Travel.all
     end
   end
